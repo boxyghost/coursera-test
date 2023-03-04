@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var yourname = prompt('Please enter your name: ');
+        function hello(name){
+            var message = `Hello ${name}, and welcome!`;
+            (name == null) ? message = "You didn't give me a name." : null;
+            console.log(message);
+        }
+        hello(yourname);
+    </script>
+    
+</body>
+</html>

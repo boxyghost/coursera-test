@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var food = ['sushi', 'pizza', 'coffee'];
+        food.length = 3;
+        var yourname = prompt('Please enter your name: ');
+
+        function getRandInt(min, max){
+            return(Math.floor(Math.random()*max)+min);
+        }
+
+        function hospitality(name, gift){
+            console.log(hello(yourname));
+            console.log(`${yourname}, would you like some ${gift[getRandInt(0, gift.length)]}?`);
+        }
+
+        function hello(name){
+            var message = `Hello ${name}, and welcome!`;
+            (name == null) ? message = "You didn't give me a name." : null;
+            return(message);
+        }
+        hospitality(yourname, food);
+    </script>
+    
+</body>
+</html>
