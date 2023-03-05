@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Challenges: Challenge 26</title>
+</head>
+<style>
+    .sidenav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 100%;
+        width: 160px;
+        padding-top: 20px;
+        overflow-x: hidden;
+        padding: 6px 8px 6px 16px;
+    }
+    .butts{
+        position: fixed;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .body {
+        margin-left: 160px;
+
+    }
+</style>
+<body>
+    <div class="body">
+        <h1>JavaScript Event Challenges: Challenge 26</h1>
+        <div id="pars">
+            <p>Here is a paragraph of text</p>
+        </div>
+    </div>
+
+
+    <div id="Buttons" class="sidenav">
+        <button>Add a paragraph</button>
+        <p></p>
+        
+    </div>
+
+    <script>
+        var parNum = 1;
+        var divTag = document.getElementById('pars');
+        var btn = document.querySelector('button');
+        var delBtn = document.createElement('button');
+        var btns = document.getElementById('Buttons');
+        delBtn.appendChild(document.createTextNode('Remove a paragraph'));
+
+        btn.addEventListener('click', function(){
+            parNum += 1;
+            if (parNum == 2){
+                delBtn.className = "butts";
+                btns.appendChild(delBtn);
+            }
+            var newPar = document.createElement('p');
+            var pText = document.createTextNode(`Here is paragraph #${parNum}.`);
+            newPar.appendChild(pText);
+            divTag.appendChild(newPar);
+        });
+
+        delBtn.addEventListener('click', function(){
+            parNum -=1;
+            divTag.removeChild(divTag.lastChild);
+            if (parNum == 1){
+                btns.removeChild(btns.lastChild);
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
