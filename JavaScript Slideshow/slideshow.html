@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Slideshow</title>
+</head>
+<body>
+    <div>
+        <img src="image1.jpg" alt="slidehsow image" id="myimage">
+    </div>
+
+    <p><button id="previous">Previous</button> --- <button id="next">Next</button></p>
+
+    <script>
+        var myImages = ["image1.jpg","image2.jpg","image3.jpg","image4.jpg","image5.jpg"];
+        let index = 0;
+        var prev = document.getElementById("previous");
+        const next = document.getElementById("next");
+        const img = document.getElementById("myimage");
+
+        function update(){
+            (index < 0)? index = 4: null;
+            img.src = myImages[index%5];
+        }
+
+        prev.addEventListener('click', function(){
+            index--;
+            update();
+        });
+
+        next.addEventListener('click', function(){
+            index++;
+            update();
+        });
+
+    </script>
+    
+</body>
+</html>
